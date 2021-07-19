@@ -2,7 +2,7 @@ function validation1(){
     
     var name=document.getElementById("inputname").value
     var namepara=document.getElementById("namepara");
-    var letters = /^[A-Za-z\s]*$/;
+    var letters =/^[-a-zA-Z-()]+(\s+[-a-zA-Z-()]+)*$/;
 
     if(name==""){
         namepara.innerHTML="Filed is Required"
