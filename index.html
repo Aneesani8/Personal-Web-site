@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="scroll-behavior: smooth;">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +8,12 @@
     <link rel="icon" href="https://image.freepik.com/free-vector/letter-logo-design-template_23987-87.jpg" type="image/gif" sizes="16x16"> 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
+        
+        
         .form-row p{
+    color: red;
+}
+.err{
     color: red;
 }
 .p{
@@ -26,11 +31,11 @@
     </style>
   </head>
 
-<body style="overflow-x: hidden;">
-    <header class="sticky-top" style="background-color: rgb(199, 189, 149);  width: 100%; ">
+<body style="background-color: red;" >
+    <header class="sticky-top" style="background-color: rgb(199, 189, 149); ">
         <div class="row text-black ">
             <div class="col-md-6 col-8 p-3 pl-5">
-                <h1>Mohammed Anees</h1>
+                <h2>Mohammed Anees</h2>
             </div>
             <div class="col-md-6 col-4 my-auto f">
                 <nav class="navbar navbar-expand-lg navbar-light ">
@@ -89,7 +94,7 @@
 
     <section id="aboutme"  style="background-color: rgb(177, 121, 132);" class="about p">
         <div class="container">
-            <div class="row align-items-center  ">
+            <div class=" align-items-center  ">
                 <div class="col-md-6 ">
                     <img src="https://instagram.fcok7-1.fna.fbcdn.net/v/t51.2885-15/e35/p480x480/217957353_548758376470618_294165777383848459_n.jpg?_nc_ht=instagram.fcok7-1.fna.fbcdn.net&_nc_cat=110&_nc_ohc=p8_BIfyODEEAX--bTVi&edm=ABJHkxYAAAAA&ccb=7-4&oh=c7758b65ce937210ae1b7e9139999823&oe=60F79602&_nc_sid=fa978c&ig_cache_key=MjYxODgyODUyODk4Mjg0NjYxOA%3D%3D.2-ccb7-4" alt="" class="img-fluid img-thumbnail">
                 </div>
@@ -191,24 +196,24 @@
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label>Name</label>
-                    <input type="text" onkeyup="validation1()" class="form-control" id="inputname" name="name" placeholder="Name">
+                    <input type="text"  class="form-control" id="inputname" name="name" placeholder="Name">
                     <p  id="namepara"></p>
                   </div>
                   <div class="form-group col-md-6">
                     <label>Email</label>
-                    <input type="text" onkeyup="validation2()" class="form-control" name="email" id="inputemail" placeholder="Email">
+                    <input type="text"  class="form-control" name="email" id="inputemail" placeholder="Email" >
                      <p  id=emailpara></p>
                   </div>
                 </div>
                 <div class="form-group">
                     <label>Mobile no</label>
-                  <input type="tel" onkeyup="validation3()" maxlength="10" minlength="10"  class="form-control" id="inputmobailnumber" name="mobile no" placeholder="Mobile no">
-                     <p  id="numberpara"></p>
+                  <input type="tel" maxlength="10"  class="form-control" id="inputmobailnumber" name="mobile no" placeholder="Mobile no" oninput="this.value=this.value.replace(/[^\d]/,'')">
+                     <p class="err" id="mobilepara"></p>
                 </div>
                 <div class="form-group">  
                     <label>Message</label>
-                    <textarea class="form-control" onkeyup="validation4()" id="inputtext"  cols="74" rows="5" name="message" placeholder="Type your message here..."></textarea>
-                    <p  id="textpara"></p>
+                    <textarea class="form-control"  id="inputtext"  cols="74" rows="5" name="message" placeholder="Type your message here..."></textarea>
+                    <p class="err" id="messagepara" ></p>
                   </div>
                 
                 
@@ -242,8 +247,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
   $("#submit-form").submit((e)=>{
-      if(validation1()&&validation2()&&validation3()&&validation4()){
+     
       e.preventDefault()
+      if( namevalidation()&&emailValidation()&&mobileValidation()&&messageValidation()){
       $.ajax({
           url:"https://script.google.com/macros/s/AKfycbw60TTZDvKXbmhtNNQ9n9N2-a7zOsVKeXTP0oOpmE_uTXvnkPYwUVIJfjN01k7a-9Yu/exec",
           data:$("#submit-form").serialize(),
@@ -260,7 +266,10 @@
       })
     }
     else{
-        alert("Please Fill Correctly ");
+       namevalidation()
+       emailValidation()
+       mobileValidation()
+       messageValidation()
     }
   })
 
