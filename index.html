@@ -31,9 +31,9 @@
     </style>
   </head>
 
-<body style="background-color: red;" >
+<body>
     <header class="sticky-top" style="background-color: rgb(199, 189, 149); ">
-        <div class="row text-black ">
+        <div class=" row text-black" style="margin-right: 0;">
             <div class="col-md-6 col-8 p-3 pl-5">
                 <h2>Mohammed Anees</h2>
             </div>
@@ -44,8 +44,8 @@
                       <span class="navbar-toggler-icon"></span>
                     </button>
                   
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                      <ul class="navbar-nav ml-auto ">
+                    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                      <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
                           <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
                         </li>
@@ -59,7 +59,7 @@
                             <a class="nav-link" href="#skills">Skills</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="#contactme">Contact me</a>
+                            <a class="nav-link" href="#contactme">Contact</a>
                           </li>
                        
                       </ul>
@@ -96,7 +96,7 @@
         <div class="container">
             <div class=" align-items-center  ">
                 <div class="col-md-6 ">
-                    <img src="https://instagram.fcok7-1.fna.fbcdn.net/v/t51.2885-15/e35/p480x480/217957353_548758376470618_294165777383848459_n.jpg?_nc_ht=instagram.fcok7-1.fna.fbcdn.net&_nc_cat=110&_nc_ohc=p8_BIfyODEEAX--bTVi&edm=ABJHkxYAAAAA&ccb=7-4&oh=c7758b65ce937210ae1b7e9139999823&oe=60F79602&_nc_sid=fa978c&ig_cache_key=MjYxODgyODUyODk4Mjg0NjYxOA%3D%3D.2-ccb7-4" alt="" class="img-fluid img-thumbnail">
+                    <img src="images/pic1.jpeg" alt="" class="img-fluid img-thumbnail">
                 </div>
                 <div class="col-md-6 ">
                     <h3 class="pt-4" style="color: ghostwhite;" >"I believe we are here on the planet Earth to live, grow up and do what we can to make this world a better place for all people to enjoy freedom."  <hr> <hr> <br> <br> </h3>
@@ -196,12 +196,12 @@
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label>Name</label>
-                    <input type="text"  class="form-control" id="inputname" name="name" placeholder="Name">
+                    <input type="text"  class="form-control" id="inputname" name="name" " oninput="this.value=this.value.replace(/[^A-Za-z-,.;'&/.() ]|^ /g,'')" placeholder="Name">
                     <p  id="namepara"></p>
                   </div>
                   <div class="form-group col-md-6">
                     <label>Email</label>
-                    <input type="text"  class="form-control" name="email" id="inputemail" placeholder="Email" >
+                    <input type="text"  class="form-control" name="email" id="inputemail" oninput="this.value=this.value.replace(/\s/g, '')"  placeholder="Email" >
                      <p  id=emailpara></p>
                   </div>
                 </div>

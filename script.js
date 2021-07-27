@@ -44,12 +44,9 @@ function namevalidation(){
     $('#namepara').html("")
     return true;
   }
-  else if(name==" "){
-    $('#namepara').html("Don't use space at first letter")
-    return false;
-  }
+  
   else{
-    $('#namepara').html("Use only character")
+    $('#namepara').html("Don't use Space at last letter")
     return false;
   }
 
