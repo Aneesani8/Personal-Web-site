@@ -108,3 +108,9 @@ function messageValidation(){
       return true;
   }
 }
+$('.navbar-collapse').click(function(){
+  $(".navbar-collapse").hide('hide');
+});
+$('.navbar-toggler').click(function(){
+  $(".navbar-collapse").show('hide');
+});
